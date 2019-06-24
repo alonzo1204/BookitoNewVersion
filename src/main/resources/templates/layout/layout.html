@@ -15,8 +15,10 @@
 
 	<header th:fragment="header">
 
-		<nav class="navbar navbar-expand-lg navbar-info bg-info fixed-top"   
+		<nav class="navbar navbar-expand-lg navbar-info bg-info fixed-top"   style="background:linear-gradient(120deg, #424949 18%, #c0392b)" 
 		id="mainNav" >
+		
+		
 		<a class="navbar-brand navbar-light">Bookito</a>
 		<button class="navbar-toggler navbar-toggler-right" type="button"
 			data-toggle="collapse" data-target="#navbarResponsive"
@@ -30,7 +32,7 @@
 			<ul class="navbar-nav navbar-sidenav" id="exampleAccordion" style="background:#424949">
 
 
-				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" 
 					title="Components"><a
 					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
 					href="#collapseComponents" data-parent="#exampleAccordion"> <i
@@ -92,24 +94,18 @@
 
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
 					title="Menu Level"><a
-					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
+					class="nav-link " data-toggle="collapse"
 					href="#collapseMulti2" data-parent="#exampleAccordion"> <i
 						class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text">Reglamento Bookito</span>
 				</a>
-					<ul class="sidenav-second-level collapse" id="collapseMulti2">
-
-						<li><a href="#" th:href="@{/informe/form}"> <i
-								class="fa fa-pencil-square-o" aria-hidden="true"></i> Registrar
-						</a></li>
-						<li><a href="#" th:href="@{/informe/listar}"> <i
-								class="fa fa-list-ol" aria-hidden="true"></i> Listar
-						</a></li>
-						<li><a href="#" th:href="@{/informe/irBuscar}"> <i
-								class="fa fa-eye" aria-hidden="true"></i> Buscar
-						</a></li>
-
-					</ul></li>
-
+					</li>
+					
+					
+				<li class="nav-item" ><a class="nav-link " data-toggle="modal" 
+				href="#collapseExamplePages" data-target="#exampleModal" > <i class="fa fa-fw fa-sign-out">
+					</i> <span class="nav-link-text">Cerrar Sesión </span>
+				</a></li>
+		
 			</ul>
 			<ul class="navbar-nav sidenav-toggler" style="background:#424949">
 				<li class="nav-item"><a class="nav-link text-center"
@@ -161,10 +157,7 @@
 						<a class="dropdown-item small" href="#">View all alerts</a>
 					</div></li>
 
-				<li class="nav-item"><a class="nav-link" data-toggle="modal"
-					data-target="#exampleModal"> <i class="fa fa-fw fa-sign-out"></i>Cerrar
-						Sesion
-				</a></li>
+				
 			</ul>
 		</div>
 	</nav>
@@ -188,7 +181,7 @@
 		<footer class="sticky-footer">
 			<div class="container">
 				<div class="text-center">
-					<small>Copyright © Antonella Puma</small>
+					<small>Copyright © BookitoApp</small>
 				</div>
 			</div>
 		</footer>
