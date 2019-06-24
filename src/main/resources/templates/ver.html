@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head">
+
+<meta charset="utf-8" />
+
+</head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container py-4">
+
+		
+		<div class="card bg-light">
+					<div class="card-header bg-warning" th:text="${titulo}"></div>
+					<div class="card-body">
+
+						<ul class="list-group">
+							<li class="list-group-item active"
+								th:text="'NOMBRE:          ' + ${empleo.nombreEmpleo}"></li>
+							<li class="list-group-item"
+								th:text="'ÁREA:   ' + ${empleo.area.nombreArea}"></li>
+							<li class="list-group-item"
+								th:text="'UBICACIÓN:       ' + ${empleo.ubicaEmpleo}"></li>
+							<li class="list-group-item"
+								th:text="'TIPO DE EMPLEO              ' + ${empleo.tipoempleo.nombreTipoEmpleo}"></li>
+							<li class="list-group-item"
+								th:text="'VACANTES:        ' + ${empleo.vacantesEmpleo}"></li>
+							<li class="list-group-item"
+								th:text="'VALIDO HASTA          ' + ${empleo.validoHasta}"></li>
+							<li class="list-group-item"
+								th:text="'DESCRIPCIÓN:         ' + ${empleo.descripEmpleo}"></li>
+							<li class="list-group-item"
+								th:text="'BENEFICIOS:        ' + ${empleo.beneficEmpleo}"></li>
+						</ul>
+						
+						
+							<a th:href="@{'/index'}"
+							class="btn btn-light btn-xs">&laquo; volver</a>
+
+						
+						
+
+					</div>
+				</div>
+
+
+	</div>
+
+
+	<footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>
