@@ -228,22 +228,42 @@ public class BookitoController {
 
 			List<Bookito> listaBookitos;
 			
-			//bookito.setTitulo(bookito.getTitulo());
-			//listaBookitos= bookitoService.buscarTitulo(bookito.getTitulo());
-			
 			//bookito.setAutor(bookito.getAutor());
 			//listaBookitos= bookitoService.buscarAutor(bookito.getAutor());
+			//bookito.setAutor(bookito.getIsbn());
+			//listaBookitos= bookitoService.buscarAutor(bookito.getIsbn());
+			
+			
 			
 			//bookito.setIsbn(bookito.getIsbn());
 			//listaBookitos= bookitoService.buscarIsbn(bookito.getIsbn());
 			
-			bookito.setAutor(bookito.getAutor());
-			listaBookitos= bookitoService.buscarAutor(bookito.getAutor());
+			
+			bookito.setTitulo(bookito.getTitulo());
+			listaBookitos= bookitoService.buscarTitulo(bookito.getTitulo());
+			
+			if(listaBookitos.isEmpty()) {
+				listaBookitos=bookitoService.buscarSede(bookito.getTitulo());
+				
+				if(listaBookitos.isEmpty()) {
+					try {
+						listaBookitos=bookitoService.buscarCategoria(bookito.getTitulo());
+					}catch (Exception e)  {
+						model.put("mensaje", "Formato incorreco");
+						
+					}
+				}
+			}
+			
+	
 			
 			
 			
 			
 		
+			if(listaBookitos.isEmpty()) {
+				model.put("mensaje", "No se encontro");
+			}
 			
 			
 			model.put("titulo", "Buscar Bookito");

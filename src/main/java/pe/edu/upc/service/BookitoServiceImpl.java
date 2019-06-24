@@ -51,20 +51,20 @@ public class BookitoServiceImpl implements IBookitoService {
 	}
 	
 	@Override
-	public List<Bookito> buscarAutor(String autor) {
-		return bookitoDAO.buscarAutor(autor);
+	public List<Bookito> buscarTitulo(String titulo) {
+		return bookitoDAO.buscarTitulo(titulo);
 	}
 	
 	@Override
-	public List<Bookito> buscarTitulo(String titulo) {
-		return bookitoDAO.buscarTitulo(titulo);
+	public List<Bookito> buscarAutor(String autor) {
+		return bookitoDAO.buscarTitulo(autor);
 	}
 	/*
 	@Override
 	public List<Bookito> buscarIsbn(String isbn) {
 		return bookitoDAO.buscarIsbn(isbn);
 	}
-	
+	*/
 	@Override
 	public List<Bookito> buscarSede(String sede) {
 		return bookitoDAO.buscarSede(sede);
@@ -74,7 +74,7 @@ public class BookitoServiceImpl implements IBookitoService {
 		return bookitoDAO.buscarCategoria(categoria);
 	}
 	
-	*/
+	
 	
 	
 }

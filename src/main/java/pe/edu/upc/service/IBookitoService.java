@@ -23,8 +23,8 @@ public List<Bookito> findAll();
 	//metodos de busqueda
 	List<Bookito> buscarTitulo(String titulo);
 	List<Bookito> buscarAutor(String autor);
-	//List<Bookito> buscarSede(String sede);
-	//List<Bookito> buscarCategoria(String categoria);
+	List<Bookito> buscarSede(String sede);
+	List<Bookito> buscarCategoria(String categoria);
 	//List<Bookito> buscarIsbn(String isbn);
 	
 }
