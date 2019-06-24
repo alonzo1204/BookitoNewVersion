@@ -3,16 +3,14 @@
 <head th:replace="layout/layout :: head">
 <meta charset="UTF-8" />
 </head>
-<body background="https://i.kinja-img.com/gawker-media/image/upload/s--UQqgB6xJ--
-/c_scale,f_auto,fl_progressive,q_80,w_800/etoiued37g1bf3rngamu.jpg">
-
+<body>
 
 	<div class="rtl-form">
 		<div class="card bg-light">
-			<h1 style="text-align:center;">Iniciar Sesión</h1>
+			<h1 style="text-align:center;">Registro</h1>
 			<div class="card-body">
 
-				<form th:action="@{/login}" method="post">
+				<form>
 
 					<div class="form-group ">
 						<input type="text" name="username" id="username"
@@ -38,7 +36,6 @@
 		</div>
 
 	</div>
-
 
 </body>
 </html>

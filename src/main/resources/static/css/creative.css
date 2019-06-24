@@ -7,6 +7,32 @@ html {
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
+.auth{
+	background: url("../static/images/Biblioteca_1.jpg") center center no-repeat;
+ 	background-size: cover; 
+}
+
+element.style {
+    background-color: #eee;
+}
+.containe {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+    padding: 25px 10px;
+    border: 10px solid #112233;
+}
+.rtl-form {
+  width:480px; 
+  background:#424949; 
+  padding-top: 10%; 
+  padding-left: 3%;
+  padding-right: 3%;
+  float: right; 
+  height: 100%;
+}
 
 hr {
   max-width: 50px;
