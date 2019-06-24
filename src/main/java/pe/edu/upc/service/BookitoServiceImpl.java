@@ -59,12 +59,12 @@ public class BookitoServiceImpl implements IBookitoService {
 	public List<Bookito> buscarAutor(String autor) {
 		return bookitoDAO.buscarTitulo(autor);
 	}
-	/*
+	
 	@Override
 	public List<Bookito> buscarIsbn(String isbn) {
 		return bookitoDAO.buscarIsbn(isbn);
 	}
-	*/
+	
 	@Override
 	public List<Bookito> buscarSede(String sede) {
 		return bookitoDAO.buscarSede(sede);

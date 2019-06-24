@@ -12,22 +12,22 @@ import pe.edu.upc.entity.Bookito;
 public interface IBookitoDAO extends PagingAndSortingRepository<Bookito,Long>{
 
 	
-	@Query("from Bookito e where e.autor like %:titulo%")
-	List<Bookito> buscarAutor(@Param("titulo") String titulo);
+	@Query("select e from Bookito e where lower(e.autor) like lower(concat('%',?1,'%'))")
+	List<Bookito> buscarAutor(String autor);
 	
-	@Query("from Bookito e where e.titulo like %:titulo%")
-	List<Bookito> buscarTitulo(@Param("titulo") String titulo);
+	@Query(" select e from Bookito e where e.titulo like %:titulo%")
+	List<Bookito> buscarTitulo(@Param("titulo")String titulo);
 	
 	
 	
-	//@Query("from Bookito e where e.isbn like %:isbn%")
-	//List<Bookito> buscarIsbn(@Param("isbn") String isbn);
+	@Query("select e from Bookito e where lower(e.isbn) like lower(concat('%',?1,'%'))")
+	List<Bookito> buscarIsbn(@Param("isbn") String isbn);
 	
-	@Query("from Bookito e where e.categoria.nombreCategoria like %:nombreCategoria%")
+	@Query("select e from Bookito e where lower(e.categoria.nombreCategoria) like lower(concat('%',?1,'%'))")
 	List<Bookito> buscarCategoria(@Param("nombreCategoria") String nombreCategoria);
 	
 	
-	@Query("from Bookito e where e.sede.nombreSede like %:nombreSede%")
+	@Query("select e from Bookito e where lower(e.sede.nombreSede) like lower(concat('%',?1,'%'))")
 	List<Bookito> buscarSede(@Param("nombreSede") String nombreSede);
 	
 

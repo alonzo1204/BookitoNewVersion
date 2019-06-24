@@ -25,6 +25,6 @@ public List<Bookito> findAll();
 	List<Bookito> buscarAutor(String autor);
 	List<Bookito> buscarSede(String sede);
 	List<Bookito> buscarCategoria(String categoria);
-	//List<Bookito> buscarIsbn(String isbn);
+	List<Bookito> buscarIsbn(String isbn);
 	
 }

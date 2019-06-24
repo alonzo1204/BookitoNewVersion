@@ -222,18 +222,15 @@ public class BookitoController {
 			return "bookito/buscar";
 		}
 		
-		// METODO PARA BUSCAR
+
 		@RequestMapping(value = "/buscar")
 		public String buscar(Map<String, Object> model, @ModelAttribute Bookito bookito) throws ParseException {
 
 			List<Bookito> listaBookitos;
-			
 			//bookito.setAutor(bookito.getAutor());
 			//listaBookitos= bookitoService.buscarAutor(bookito.getAutor());
 			//bookito.setAutor(bookito.getIsbn());
 			//listaBookitos= bookitoService.buscarAutor(bookito.getIsbn());
-			
-			
 			
 			//bookito.setIsbn(bookito.getIsbn());
 			//listaBookitos= bookitoService.buscarIsbn(bookito.getIsbn());
@@ -242,10 +239,13 @@ public class BookitoController {
 			bookito.setTitulo(bookito.getTitulo());
 			listaBookitos= bookitoService.buscarTitulo(bookito.getTitulo());
 			
+			
+			
 			if(listaBookitos.isEmpty()) {
-				listaBookitos=bookitoService.buscarSede(bookito.getTitulo());
+				listaBookitos=bookitoService.buscarAutor(bookito.getTitulo());
 				
 				if(listaBookitos.isEmpty()) {
+					
 					try {
 						listaBookitos=bookitoService.buscarCategoria(bookito.getTitulo());
 					}catch (Exception e)  {
