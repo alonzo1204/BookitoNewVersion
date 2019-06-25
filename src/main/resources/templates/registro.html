@@ -10,13 +10,21 @@
 
 
 		
-	<div class="rtl-form">
+	<div class="rtl-form-iz">
 		<div class=" bg-transparent">
-			<h1 style="color: white; text-align:center;">Iniciar Sesión</h1>
+			<h1 style="color: white; text-align:center;">Registrar</h1>
 			<div class="card-body">
 
-				<form >
-
+				<form th:action="@{/login}" method="post">
+					<label class="label" style="color:whitesmoke;">Nombre de Alumno</label>
+					<div class="form-group ">
+						<div class="input-group-prepend">
+                        	<span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+						<input type="text" name="nombre" id="nombre"
+						class="form-control" placeholder="Nombre de alumno" autofocus="true"  required="true"/>
+					</div>
+					<label class="label" style="color:whitesmoke;">Código de alumno</label>
 					<div class="form-group ">
 						<div class="input-group-prepend">
                         	<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -25,11 +33,12 @@
 						class="form-control" placeholder="Código de alumno" autofocus="true"  required="true"/>
 					</div>
 
+					<label class="" style="color:whitesmoke;">Contraseña</label>
 					<div class="form-group ">
 						<input type="password" name="password" id="password"
 						class="form-control" placeholder="Contraseña" required="true"/>
 					</div>
-
+					<br/>
 					<div class="form-group">
 						<input type="submit" class="btn btn-lg btn-primary btn-block"
 						value="Iniciar Sesión" />
@@ -39,7 +48,7 @@
 					
 					<div class="text-block text-center">
 						<p style="color:white; font-size:16px;">¿No está registrado?</p>
-						<a th:href="" style="font-size:14px; color:white;">Registrarse aquí</a>
+						<a th:href="@{/registro}" style="font-size:14px; color:white;">Registrarse aquí</a>
 					</div>
 					
 

@@ -12,6 +12,8 @@
 }
 .rtl-form {width:480px; 
   background:#424949;padding-top: 10%;  padding-left: 3%;  padding-right: 3%;  float: right; height: 650px;}
+.rtl-form-iz {width:480px; 
+  background:#424949;padding-top: 5%;  padding-left: 3%;  padding-right: 3%;  float: left; height: 650px;}
 .auth{
 	background: url("../static/images/Biblioteca_1.jpg") center center no-repeat;
  	background-size: cover; 
