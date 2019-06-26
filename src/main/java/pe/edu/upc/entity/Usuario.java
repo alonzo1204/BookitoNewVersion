@@ -27,18 +27,34 @@ public class Usuario implements Serializable {
 	@Column(length = 30, unique = true)
 	private String username;
 
+	@Column(name = "codigo_uni", length = 60, nullable = false)
+	private String codigo_uni;
+	
 	@Column(length = 60)
 	private String password;
 
 	private Boolean enabled;
+	
+	private String authority;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id")
-	private List<Role> roles;
-
+	
 	public Long getId() {
 		return id;
 	}
+	
+	
+
+	public String getAuthority() {
+		return authority;
+	}
+
+
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
+
+
 
 	public void setId(Long id) {
 		this.id = id;
@@ -68,12 +84,17 @@ public class Usuario implements Serializable {
 		this.enabled = enabled;
 	}
 
-	public List<Role> getRoles() {
-		return roles;
+
+
+	public String getCodigo_uni() {
+		return codigo_uni;
 	}
 
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
+
+
+	public void setCodigo_uni(String codigo_uni) {
+		this.codigo_uni = codigo_uni;
 	}
 
+	
 }

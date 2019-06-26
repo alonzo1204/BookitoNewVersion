@@ -15,41 +15,56 @@
 			<h1 style="color: white; text-align:center;">Registrar</h1>
 			<div class="card-body">
 
-				<form th:action="@{/login}" method="post">
+				<form th:action="@{/registro}" method="post">
+
 					<label class="label" style="color:whitesmoke;">Nombre de Alumno</label>
 					<div class="form-group ">
 						<div class="input-group-prepend">
                         	<span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-						<input type="text" name="nombre" id="nombre"
+                        
+                        
+						<input type="text" name="username" id="username"
 						class="form-control" placeholder="Nombre de alumno" autofocus="true"  required="true"/>
 					</div>
+					
+				
 					<label class="label" style="color:whitesmoke;">Código de alumno</label>
 					<div class="form-group ">
 						<div class="input-group-prepend">
                         	<span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-						<input type="text" name="username" id="username"
-						class="form-control" placeholder="Código de alumno" autofocus="true"  required="true"/>
+						<input type="text" name="codigo_uni" id="codigo_uni"
+						class="form-control" placeholder="codigo@upc.edu.pe" autofocus="true"  required="true"/>
 					</div>
 
-					<label class="" style="color:whitesmoke;">Contraseña</label>
+			 <label class="" style="color:whitesmoke;">Contraseña</label>
 					<div class="form-group ">
 						<input type="password" name="password" id="password"
 						class="form-control" placeholder="Contraseña" required="true"/>
 					</div>
+				
+		
+				
 					<br/>
 					<div class="form-group">
 						<input type="submit" class="btn btn-lg btn-primary btn-block"
-						value="Iniciar Sesión" />
+						value="Crear Cuenta" />
 					</div>
 					<input type="hidden" th:name="${_csrf.parameterName}"
 						th:value="${_csrf.token}" />
 					
 					<div class="text-block text-center">
-						<p style="color:white; font-size:16px;">¿No está registrado?</p>
-						<a th:href="@{/registro}" style="font-size:14px; color:white;">Registrarse aquí</a>
+						<p style="color:white; font-size:16px;">¿Ya tienes una cuenta?</p>
+
+						<a th:href="@{/login}" style="font-size:14px; color:white;">Iniciar Sesión</a>
+
+					
+
 					</div>
+						<input type="text"   style="visibility:hidden"  class="form-control" name="authority"  id="authority" value="ROLE_ADMIN"/>
+				
+				<input type="text"  style="visibility:hidden"  class="form-control" name="enabled"  id="enabled" value="true"/>
 					
 
 				</form>

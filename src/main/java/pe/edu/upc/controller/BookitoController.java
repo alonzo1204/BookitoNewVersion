@@ -8,7 +8,7 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-import org.apache.commons.lang.StringUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
@@ -32,8 +32,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import pe.edu.upc.entity.Bookito;
-import pe.edu.upc.entity.Empleado;
-import pe.edu.upc.entity.Empleo;
 import pe.edu.upc.paginator.PageRender;
 import pe.edu.upc.service.IBookitoService;
 import pe.edu.upc.service.ICategoriaService;

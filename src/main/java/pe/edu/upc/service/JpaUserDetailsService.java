@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upc.dao.IUsuarioDao;
-import pe.edu.upc.entity.Role;
+
 import pe.edu.upc.entity.Usuario;
 
 
@@ -32,12 +32,14 @@ public class JpaUserDetailsService implements UserDetailsService {
 
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 
-		for (Role role : usuario.getRoles()) {
-			authorities.add(new SimpleGrantedAuthority(role.getAuthority()));
-		}
+		authorities.add(new SimpleGrantedAuthority(usuario.getAuthority()));
+		
+		
+		//for (Usuario usuario : usuario.getAuthority()) {
+			//authorities.add(new SimpleGrantedAuthority(usuario.getAuthority()));
+//		}
 
-		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true,
-				authorities);
+		return new User(usuario.getUsername(), usuario.getPassword(), usuario.getEnabled(), true, true, true,authorities);
 	}
 
 }
