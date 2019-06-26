@@ -17,18 +17,17 @@ public class LoginController {
 			RedirectAttributes flash) {
 		
 		if (principal != null) {
-			flash.addFlashAttribute("info", "Ya ha inciado sesión anteriormente");
+			//flash.addFlashAttribute("info", "Ya ha inciado sesión anteriormente");
 			return "redirect:/empleo/listar";
 		}
 
 		if (error != null) {
-			model.addAttribute("error",
-					"Error en el login: Nombre de usuario o contraseña incorrecta, por favor vuelva a intentarlo!");
+			//model.addAttribute("error","Error en el login: Nombre de usuario o contraseña incorrecta, por favor vuelva a intentarlo!");
 			return "login";
 		}
 
 		if (logout != null) {
-			model.addAttribute("success", "Ha cerrado sesión con éxito!");
+			//model.addAttribute("success", "Ha cerrado sesión con éxito!");
 			return "login";
 		}
 		

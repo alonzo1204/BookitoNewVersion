@@ -29,14 +29,15 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		
 			
 		try {
 			http.authorizeRequests()
 
-					.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') ").antMatchers("/empleo/**")
+					.antMatchers("/admin/**").access("hasRole('ROLE_ADMIN') ").antMatchers("/bookito/**")
 					.access("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER') ").and()
 
-					.formLogin().successHandler(successHandler).loginPage("/login").loginProcessingUrl("/login").defaultSuccessUrl("/bookito/listar")
+					.formLogin().successHandler(successHandler).loginPage("/login").loginProcessingUrl("/login").defaultSuccessUrl("/bookito/irBuscar")
 					.permitAll().and().logout().logoutSuccessUrl("/login").permitAll().and().exceptionHandling().accessDeniedPage("/error_403");
 
 
@@ -49,6 +50,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void configurerGlobal(AuthenticationManagerBuilder build) throws Exception {
 		build.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+		
 	
 	}
 
