@@ -8,7 +8,7 @@ spring:
   #estrategia de generacion de base de datos
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/new_bookito2
+    url: jdbc:postgresql://localhost:5433/new_bookito2
     username: postgres
     password: admin
     
