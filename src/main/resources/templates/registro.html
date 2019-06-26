@@ -40,10 +40,17 @@
 
 			 <label class="" style="color:whitesmoke;">Contraseña</label>
 					<div class="form-group ">
-						<input type="password" name="password" id="password"
+						<input type="password" name="password" id="password" pattern="^\S{,}$"
+						onchange="if(this.checkValidity()) form.againPassword.pattern = this.value;"
 						class="form-control" placeholder="Contraseña" required="true"/>
 					</div>
-				
+					
+				<label class="" style="color:whitesmoke;">Verificar contraseña</label>
+				<div class="form-group ">
+						<input type="password" name="againPassword" id="againPassword" pattern="^\S{6,}$"
+						onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');" 
+						class="form-control" placeholder="Contraseña" required="true"/>
+					</div>
 		
 				
 					<br/>

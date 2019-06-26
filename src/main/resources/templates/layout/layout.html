@@ -18,8 +18,8 @@
 		id="mainNav"  >
 		
 		<hr />
-		<a href="#" th:href="@{/empleo/listar}">
-		<img  style="width:75px; height:48px;" th:src="@{/images/LOGO.png}" alt="Spring logo" /></a>
+		<a href="#" th:href="@{/bookito/listar}">
+		<img  style="width:80px; height:70px;" th:src="@{/images/LOGO.png}" alt="Spring logo" /></a>
 	
 		<button class="navbar-toggler navbar-toggler-right" type="button"
 			data-toggle="collapse" data-target="#navbarResponsive"
@@ -28,8 +28,18 @@
 			<span class="navbar-toggler-icon"></span>
 			
 		</button>
-		
-		
+		<div style="padding-left:170px;">
+		  <input id="" class="form-control" 
+         data-role="search-input" type="search" name="term" value=""
+          placeholder="Título, autor, codigo ISBN, Sede..." autocapitalize="off" 
+        autocorrect="off" autocomplete="off"  dir="auto" 
+        style="width:600px;height:150x; color: rgb(233, 230, 230); border: none;position: relative;
+         vertical-align: top; background: linear-gradient(120deg, #383838 18%, #161010);"></input>
+        </div>
+        <button class="form-control" style= "border: none;background-color: rgb(19, 19, 19);width:40px;height:150x;">
+             <i class="fa fa-search" style="color: whitesmoke" ></i>
+         </button>
+	
 	
 		
 		<div class="collapse navbar-collapse" id="navbarResponsive"  >

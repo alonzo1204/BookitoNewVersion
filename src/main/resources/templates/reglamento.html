@@ -1,10 +1,78 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+<title>Bookito</title>
+<!-- Bootstrap core CSS-->
+<link rel="stylesheet"
+	th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" />
+<!-- Custom fonts for this template-->
+<link rel="stylesheet"
+	th:href="@{/vendor/font-awesome/css/font-awesome.min.css}" />
+<!-- Page level plugin CSS-->
+<link rel="stylesheet"
+	th:href="@{/vendor/datatables/dataTables.bootstrap4.css}" />
+<!-- Custom styles for this template-->
+<link rel="stylesheet" th:href="@{/css/sb-admin.css}" />
+</head>
+
+<header th:replace="layout/layout :: header"></header>
+<body>
+<div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body" style=" width: 800px;height: 600px;">
+                    <h4 class="card-title" style="color:black;"><font >Reglamento Bookito</font></h4>
+    
+                   
+                        <thead>
+                               
+                            <tr>
+                                   
+                                    <th style="font-size:5">Alcance y Bibliotecas del Sistema</th>
+                                    
+                                    
+                                
+                            </tr>
+               
+                   
+                                    <p align="justify" >En el presente Reglamento se establecen los derechos, obligaciones, sanciones y
+                                            condiciones de uso de los espacios de estudio y recursos de información de la Biblioteca virtual
+                                            en Bookito , de cumplimiento obligatorio por todos los usuarios.</p>
+                                    <p align="justify"> Los usuarios de los espacios de estudio o recursos de información de la Biblioteca virtual de Bookito  serán usuarios “internos” o “externos”, dependiendo de la calidad del vínculo que
+                                             se mantenga con la UP. El presente Reglamento es de cumplimiento obligatorio para
+                                             todos los usuarios, independientemente del tipo de usuario del que se trate. </p>
+                                    <p >El plazo máximo  para una reserva de un libro es de 7 dias. </p>
+
+                                    <p>El usuario podra cancelar una reserva solo si no se recoge el ejemplar  como plazo maximo dos dias de realiza la reserva.</p>
+
+                                    <p>La reserva se cancelará automaticamente si no se recoge el ejemplar como maximo en dos dias.</p>
+
+                                    <p>El usuario recibira una penalización si no recoge el libro como plazo máximo dos días después de realizada la reserva.</p>
+
+                                    <p>Solo se permitira al usuario como maximo dos reservas de libros , y para solicitar una nueva reserva, debera de culminar una reserva anterior. </p>
+
+                                    <p>El usuario solo podra renovar como plazo maximo hasta el cuarto dia de iniciada su reserva.</p>
+
+                                    <p>El tiempo maximo de una renovacion sera de 5 dias luego a partir de la fecha primera fecha de devolucion. </p>
+
+                                    <p>El usuario solo podra renovar una vez por reserva.</p>
+                         
+                         
+                        </thead>
+    
+                        
+    
+                 
+    
+    
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
