@@ -29,23 +29,24 @@
 			
 		</button>
 		
-		
 		<div style="padding-left:170px;">
-		  <input id="" class="form-control" 
+		  <input class="form-control" 
          data-role="search-input" type="search" name="term" value=""
           placeholder="Título, autor, codigo ISBN, Sede..." autocapitalize="off" 
         autocorrect="off" autocomplete="off"  dir="auto" 
         style="width:600px;height:150x; color: rgb(233, 230, 230); border: none;position: relative;
          vertical-align: top; background: linear-gradient(120deg, #383838 18%, #161010);"></input>
         </div>
-        
-        <button class="form-control" style= "border: none;background-color: rgb(19, 19, 19);width:40px;height:150x;" >
+
+        <button type="submit" class="form-control"  style= "border: none;background-color: rgb(19, 19, 19);width:40px;height:150x;" >
+             <a style="color: white" href="#" th:href="@{/bookito/irBuscar}">
              <i class="fa fa-search" style="color: whitesmoke" ></i>
+             </a>
          </button>
-	
-	
+         
+
 		
-		<div class="collapse navbar-collapse" id="navbarResponsive"  >
+		<div class="collapse navbar-collapse" id="navbarResponsive" >
 			<ul class="navbar-nav navbar-sidenav"  id="exampleAccordion" style="background:#424949;padding-top: 15px;" >
 
 

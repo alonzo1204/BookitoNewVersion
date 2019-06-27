@@ -220,7 +220,6 @@ public class BookitoController {
 			model.addAttribute("bookito", new Bookito());
 			return "bookito/buscar";
 		}
-		
 
 		@RequestMapping(value = "/buscar")
 		public String buscar(Map<String, Object> model, @ModelAttribute Bookito bookito) throws ParseException {
