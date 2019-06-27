@@ -64,7 +64,7 @@ public class UsuarioController {
 					return "/registro";
 				}
 
-				String mensajeFlash = (usuario.getId() != null) ? "" : "Usuario creado con exito!";
+				String mensajeFlash = (usuario.getId() != null) ? "" : "Usuario creado con exito!"+ usuario.getUsername();
 				
 				
 				usuarioService.save(usuario);
@@ -72,9 +72,10 @@ public class UsuarioController {
 				
 				status.setComplete();
 				flash.addFlashAttribute("success", mensajeFlash);
-				return "redirect:/bookito/listar";
+				return "redirect:/login";
 			}
 
+			
 			
 			
 }

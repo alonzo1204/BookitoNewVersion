@@ -40,4 +40,8 @@ public class LoginController {
 	public String irReglamento() {
 		return "reglamento";
 	}
+	@RequestMapping("/principal")
+	public String irPrincipal() {
+		return "principal";
+	}
 }
