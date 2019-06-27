@@ -64,7 +64,7 @@ public class UsuarioController {
 					return "/registro";
 				}
 
-				String mensajeFlash = (usuario.getId() != null) ? "" : "Usuario creado con exito!"+ usuario.getUsername();
+				String mensajeFlash = (usuario.getId() != null) ? "" :  "Bienvenido, "+ usuario.getUsername() ;
 				
 				
 				usuarioService.save(usuario);

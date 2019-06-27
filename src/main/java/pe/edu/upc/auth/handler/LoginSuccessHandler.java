@@ -23,7 +23,7 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler{
 		
 		FlashMap flashMap = new FlashMap();
 		
-		flashMap.put("success", "Holaaaaaaaa" +authentication.getName()+ ", haz iniciado sesión con Éxito!");
+		flashMap.put("success2", "Holaaaaaaaa, haz iniciado sesión con Éxito!");
 		
 		flashMapManager.saveOutputFlashMap(flashMap, request, response);
 		
