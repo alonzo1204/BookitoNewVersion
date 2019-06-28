@@ -45,13 +45,34 @@
 						
 							<ul class="list-group">
 							
-							<li class="list-group-item active" th:text="${bookito.titulo}"></li>
-							<li class="list-group-item" th:text="${bookito.autor}"></li>
-							<li class="list-group-item" th:text="${bookito.isbn}"></li>
-							<li class="list-group-item" th:text="${bookito.sede.nombreSede}"></li>
-							<li class="list-group-item" th:text="${bookito.ubicacion}"></li>
-							<li class="list-group-item" th:text="${bookito.categoria.nombreCategoria}"></li>
-							<li class="list-group-item" th:text="${bookito.descripcion}"></li>
+							<div class="input-group-prepend">
+								<li class="list-group-item active" style="width:200px;">Título</li>
+								<li class="list-group-item active" style="width:100%; " th:text="${bookito.titulo}"></li>
+							</div>
+							<div class="input-group-prepend">
+								<li class="list-group-item" style="width:200px">Autor</li>
+								<li class="list-group-item" style="width:100%; " th:text="${bookito.autor}"></li>
+							</div>
+							<div class="input-group-prepend">
+							<li class="list-group-item" style="width:200px">ISBN</li>
+							<li class="list-group-item" style="width:100%" th:text="${bookito.isbn}"></li>
+							</div>
+							<div class="input-group-prepend">
+							<li class="list-group-item" style="width:200px">Sede</li>
+							<li class="list-group-item" style="width:100%" th:text="${bookito.sede.nombreSede}"></li>
+							</div>
+							<div class="input-group-prepend">
+							<li class="list-group-item" style="width:200px" >Ubicación UPC</li>
+							<li class="list-group-item" style="width:100%" th:text="${bookito.ubicacion}"></li>
+							</div>
+							<div class="input-group-prepend">
+							<li class="list-group-item" style="width:200px">Categoría</li>
+							<li class="list-group-item" style="width:100%" th:text="${bookito.categoria.nombreCategoria}"></li>
+							</div>
+							<div class="input-group-prepend">
+							<li class="list-group-item" style="width:200px">Descripción</li>
+							<li class="list-group-item" style="width:100%" th:text="${bookito.descripcion}"></li>
+							</div>
 							
 					
 						</ul>
