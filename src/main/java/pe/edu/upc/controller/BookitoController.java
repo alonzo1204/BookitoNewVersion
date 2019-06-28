@@ -236,12 +236,12 @@ public class BookitoController {
 			
 			
 			bookito.setTitulo(bookito.getTitulo());
-			listaBookitos= bookitoService.buscarTitulo(bookito.getTitulo());
+			listaBookitos= bookitoService.buscarAutor(bookito.getTitulo());
 			
 			
 			
 			if(listaBookitos.isEmpty()) {
-				listaBookitos=bookitoService.buscarAutor(bookito.getTitulo());
+				listaBookitos=bookitoService.buscarSede(bookito.getTitulo());
 				
 				if(listaBookitos.isEmpty()) {
 					

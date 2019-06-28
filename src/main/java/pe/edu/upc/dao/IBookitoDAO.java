@@ -15,8 +15,8 @@ public interface IBookitoDAO extends PagingAndSortingRepository<Bookito,Long>{
 	@Query("select e from Bookito e where lower(e.autor) like lower(concat('%',?1,'%'))")
 	List<Bookito> buscarAutor(String autor);
 	
-	@Query(" select e from Bookito e where e.titulo like %:titulo%")
-	List<Bookito> buscarTitulo(@Param("titulo")String titulo);
+	@Query(" select e from Bookito e where lower(e.titulo) like lower(concat('%',?1,'%'))")
+	List<Bookito> buscarTitulo(String titulo);
 	
 	
 	

@@ -26,8 +26,8 @@ public class LoginController {
 		
 		
 		if (principal != null) {
-			flash.addFlashAttribute("info", "Ya ha inciado sesión anteriormente");
-			return "redirect:/empleo/listar";
+			flash.addFlashAttribute("info", "                Ya ha inciado sesión anteriormente");
+			return "redirect:/bookito/listar";
 		}
 
 		if (error != null) {
@@ -52,5 +52,10 @@ public class LoginController {
 	@RequestMapping("/principal")
 	public String irPrincipal() {
 		return "principal";
+	}
+	
+	@RequestMapping("/recomendaciones")
+	public String irRecomendaciones() {
+		return "recomendaciones";
 	}
 }

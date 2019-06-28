@@ -48,7 +48,13 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive"  >
 			<ul class="navbar-nav navbar-sidenav"  id="exampleAccordion" style="background:#424949;padding-top: 15px;" >
 
-
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Reglamento" ><a class="nav-link "    th:href="@{/recomendaciones}"
+				 > <i style="color: white" class="fa fa-fw fa-sitemap">
+					</i> <span style="color: white" class="nav-link-text">Recomendaciones</span>
+				</a></li>
+		
+			
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
 					title="Reglamento" ><a class="nav-link "    th:href="@{/principal}"
 				 > <i style="color: white" class="fa fa-fw fa-sitemap">
@@ -192,7 +198,7 @@
 	</nav>
 
 
-		<div class="alert alert-success" th:if="${success != null}"
+		<div class="content-wrapper" th:if="${success != null}"
 			th:text="${success}"></div>
 		<div class="alert alert-danger" th:if="${error != null}"
 			th:text="${error}"></div>
