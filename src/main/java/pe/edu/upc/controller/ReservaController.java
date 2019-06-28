@@ -1,7 +1,11 @@
 package pe.edu.upc.controller;
 
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -27,16 +31,23 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import pe.edu.upc.entity.Bookito;
 import pe.edu.upc.entity.Reserva;
+import pe.edu.upc.entity.Sede;
 import pe.edu.upc.paginator.PageRender;
 import pe.edu.upc.service.IBookitoService;
+import pe.edu.upc.service.ICategoriaService;
 import pe.edu.upc.service.IReservaService;
+import pe.edu.upc.service.ISedeService;
 import pe.edu.upc.service.IUsuarioService;
 
 @Controller
 @SessionAttributes("reserva")
 @RequestMapping("/reserva")
 public class ReservaController {
-
+	@Autowired
+	private ISedeService sedeService;
+	@Autowired
+	private ICategoriaService categoriaService;
+	
 	@Autowired
 	private IReservaService reservaService;
 	@Autowired
@@ -44,7 +55,7 @@ public class ReservaController {
 	@Autowired
 	private IUsuarioService usuarioService;
 			
-			
+
 	
 	
 	// METODO PARA VER EL DETALLE RESERVA
@@ -53,6 +64,7 @@ public class ReservaController {
 
 				// Obtenemos el Bookito por el ID
 				Reserva reserva = reservaService.findOne(id);
+			
 
 				// Validamos el bookito
 				if (reserva == null) {
@@ -76,7 +88,7 @@ public class ReservaController {
 			
 
 				PageRender<Reserva> pageRender = new PageRender<Reserva>("reserva/listar", reservas);
-				model.addAttribute("titulo", "Listado de Bookitos");
+				model.addAttribute("titulo", "Historial de Reservas");
 				model.addAttribute("reservas", reservas);
 				model.addAttribute("page", pageRender);
 				return "reserva/listar";
@@ -90,6 +102,29 @@ public class ReservaController {
 					public String crear(Map<String, Object> model) {
 							
 						Reserva reserva = new Reserva();
+						reserva.setFechainicial(Calendar.getInstance().getTime());
+						
+						model.put("reserva", reserva);
+						
+							
+						model.put("listaBOOKITOS", bookitoService.listar());
+						model.put("listaUSUARIOS", usuarioService.listar());
+							
+						model.put("titulo", "Registrar reserva");
+							return "reserva/form";
+					}
+					
+					@RequestMapping(value = "/form/{bookitoId}")
+					public String crearBookito(Map<String, Object> model, @PathVariable Long bookitoId) {
+							
+						//Reserva reserva = reservaService.findOne(bookitoId);
+						Reserva reserva = new Reserva();
+						reserva.setBookito(bookitoService.findOne(bookitoId));
+					
+				        
+				        
+						reserva.setFechainicial(Calendar.getInstance().getTime());
+						reserva.setFechafinal(Calendar.getInstance().getTime());
 						model.put("reserva", reserva);
 							
 						model.put("listaBOOKITOS", bookitoService.listar());
@@ -100,14 +135,14 @@ public class ReservaController {
 					}
 				
 			
-			// METODO PARA GUARDAR Bookito
+			// METODO PARA GUARDAR reserva
 			//@Secured("ROLE_ADMIN")
 			@RequestMapping(value = "/form", method = RequestMethod.POST)
 			public String guardar(@Valid Reserva reserva, BindingResult result, Model model,
-					@RequestParam("file") MultipartFile foto, RedirectAttributes flash, SessionStatus status) {
+					 RedirectAttributes flash, SessionStatus status) {
 
 				if (result.hasErrors()) {
-					model.addAttribute("titulo", "Formulario Bookito");
+					model.addAttribute("titulo", "Formulario Reserva");
 					return "reserva/form";
 				}
 
@@ -126,6 +161,7 @@ public class ReservaController {
 				return "redirect:/reserva/listar";
 
 			}
+			
 	
 			
 			
