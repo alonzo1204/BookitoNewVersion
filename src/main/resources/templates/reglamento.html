@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
@@ -5,7 +6,9 @@
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=yes" />
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
 <title>Bookito</title>
 <!-- Bootstrap core CSS-->
 <link rel="stylesheet"
@@ -21,9 +24,9 @@
 </head>
 
 <header th:replace="layout/layout :: header"></header>
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-<div class="row">
-        <div class="col-12">
+<body class="fixed-nav sticky-footer" id="page-top">
+<div class="container-wrapper" style="margin-left:300px;">
+        <div class="container-fluid">
             <div class="card">
                 <div class="card-body" style=" width: 800px;height: 600px;">
                     <h4 class="card-title" style="color:black;"><font >Reglamento Bookito</font></h4>
@@ -37,7 +40,7 @@
                                     
                                     
                                 
-                            </tr>
+                            
                
                    
                                     <p align="justify" >En el presente Reglamento se establecen los derechos, obligaciones, sanciones y
@@ -62,7 +65,7 @@
 
                                     <p>El usuario solo podra renovar una vez por reserva.</p>
                          
-                         
+                         </tr>
                         </thead>
     
                         
@@ -73,6 +76,6 @@
                 </div>
             </div>
         </div>
-    </div>
+   </div>
 </body>
 </html>
