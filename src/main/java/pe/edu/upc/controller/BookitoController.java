@@ -94,7 +94,7 @@ public class BookitoController {
 		}
 
 		// METODO PARA LISTAR LOS Bookitos
-		//@Secured("ROLE_ADMIN")
+		@Secured("ROLE_ADMIN")
 		@RequestMapping(value = "/listar", method = RequestMethod.GET)
 		public String listar(@RequestParam(name = "page", defaultValue = "0") int page, Model model) {
 
@@ -111,7 +111,7 @@ public class BookitoController {
 		}
 		
 		// METODO PARA INGRESAR A CREAR Bookito
-		//@Secured("ROLE_ADMIN")
+		@Secured("ROLE_ADMIN")
 		@RequestMapping(value = "/form")
 		public String crear(Map<String, Object> model) {
 
@@ -126,7 +126,7 @@ public class BookitoController {
 		}
 	
 		// METODO PARA EDITAR Bookito
-		//@Secured("ROLE_ADMIN")
+		@Secured("ROLE_ADMIN")
 		@RequestMapping(value = "/form/{id}")
 		public String editar(@PathVariable(value = "id") Long id, Map<String, Object> model, RedirectAttributes flash) {
 
@@ -150,7 +150,7 @@ public class BookitoController {
 		}
 	
 		// METODO PARA GUARDAR Bookito
-		//@Secured("ROLE_ADMIN")
+		@Secured("ROLE_ADMIN")
 		@RequestMapping(value = "/form", method = RequestMethod.POST)
 		public String guardar(@Valid Bookito bookito, BindingResult result, Model model,
 				@RequestParam("file") MultipartFile foto, RedirectAttributes flash, SessionStatus status) {
@@ -196,7 +196,7 @@ public class BookitoController {
 		}
 		
 		//METODO PARA ELIMINAR Bookito
-		//@Secured("ROLE_ADMIN")
+		@Secured("ROLE_ADMIN")
 		@RequestMapping(value = "/eliminar/{id}")
 		public String eliminar(@PathVariable(value = "id") Long id, RedirectAttributes flash) {
 

@@ -25,28 +25,56 @@
 
 <header th:replace="layout/layout :: header"></header>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-	<!-- Navigation-->
-
+	
 	<div class="content-wrapper">
 		<div class="container-fluid">
 
-	<div class="container py-4">
 
-		<div class="card bg-danger text-white">
-			<div class="card-header">Error:Access denied!</div>
+		<div class=" container py-4">
+			<h1 style="color: white; text-align:center;">Registrar</h1>
 			<div class="card-body">
-				<h5 class="card-title">
-					Sorry <span th:text="${#authentication.name}"></span>, NOT have
-					permissions to access this resource.
-				</h5>
-				<a th:href="@{/empleo/listar}" class="btn btn-outline-light"
-					role="button"> </a>
+
+				<form th:action="@{/registro}" method="post">
+
+					
+				
+					
+					<div class="form-group row">
+								<label for="username" class="col-sm-2 col-form-label">Titulo del Libro:</label>
+							
+		
+		
+			
+    
+  </div>
+
+					<br/>
+					<div class="form-group">
+						<input type="submit" class="btn btn-lg btn-primary btn-block"
+						value="Crear Cuenta" />
+					</div>
+					<input type="hidden" th:name="${_csrf.parameterName}"
+						th:value="${_csrf.token}" />
+					
+			
+						<input type="text"    class="form-control" name="authority"  id="authority" value="ROLE_ADMIN"/>
+				
+				<input type="text"  style="visibility:hidden"  class="form-control" name="enabled"  id="enabled" value="true"/>
+					
+
+				</form>
 
 			</div>
-		</div>
+
+
+
 	</div>
+
 </div>
-	<!-- /.container-fluid-->
+
+
+
+<!-- /.container-fluid-->
 		<!-- /.content-wrapper-->
 		<footer class="sticky-footer">
 			<div class="container">
@@ -101,7 +129,7 @@
 		<!-- Custom scripts for this page-->
 		<script th:src="@{/js/sb-admin-datatables.min.js}"></script>
 		<script th:src="@{/js/sb-admin-charts.min.js}"></script>
-
 	</div>
+
 </body>
 </html>

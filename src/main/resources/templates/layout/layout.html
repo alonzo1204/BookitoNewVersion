@@ -107,6 +107,12 @@
 				 > <i style="color: white" class="fa fa-fw fa-sitemap">
 					</i> <span style="color: white" class="nav-link-text">Reglamento Bookito</span>
 				</a></li>
+				
+				<li class="nav-item" data-toggle="tooltip" data-placement="right" sec:authorize="hasRole('ROLE_ADMIN')"
+					title="Reglamento" ><a class="nav-link "    th:href="@{/usuario}"
+				 > <i style="color: white" class="fa fa-fw fa-sitemap">
+					</i> <span style="color: white" class="nav-link-text">Usuarios Registrados</span>
+				</a></li>
 					
 			
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
@@ -180,11 +186,13 @@
 				<li class="nav-item d-none d-sm-inline-block">
             
 			
-                <a  class="nav-link" th:href="@{/principal}">
+                <a  class="nav-link" th:href="@{/informacion}">
                     <i class="fa fa-user-circle " style="font-size:30px;color:white;" aria-hidden="true" ></i>
-                    <span class="menu-title" style="color:white;" >  </span>
+                <i style="font-size:15px;color:white;"> Bienvenido,<span th:text="${#authentication.name}"></span></i>
                 </a>
-               
+             
+               				
+              
         
             </li>
 		
