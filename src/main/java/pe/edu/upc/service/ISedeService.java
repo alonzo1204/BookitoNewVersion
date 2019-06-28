@@ -12,6 +12,9 @@ void insertar (Sede sede);
 	
 	void eliminar(Long idSede);
 	
+	
+	
+	
 	Sede listarId(Long idSede);
 	
 	List<Sede> listar();

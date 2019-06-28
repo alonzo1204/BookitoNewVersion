@@ -72,7 +72,7 @@ public class BookitoController {
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + recurso.getFilename() + "\"")
 				.body(recurso);
 	}
-	
+
 	// METODO PARA VER EL DETALLE Bookito
 		@GetMapping(value = "/ver/{id}")
 		public String ver(@PathVariable(value = "id") Long id, Map<String, Object> model, RedirectAttributes flash) {
@@ -123,7 +123,7 @@ public class BookitoController {
 			model.put("titulo", "Registrar Bookito");
 			return "bookito/form";
 		}
-		
+	
 		// METODO PARA EDITAR Bookito
 		//@Secured("ROLE_ADMIN")
 		@RequestMapping(value = "/form/{id}")
@@ -235,12 +235,12 @@ public class BookitoController {
 			
 			
 			bookito.setTitulo(bookito.getTitulo());
-			listaBookitos= bookitoService.buscarTitulo(bookito.getTitulo());
+			listaBookitos= bookitoService.buscarAutor(bookito.getTitulo());
 			
 			
 			
 			if(listaBookitos.isEmpty()) {
-				listaBookitos=bookitoService.buscarAutor(bookito.getTitulo());
+				listaBookitos=bookitoService.buscarSede(bookito.getTitulo());
 				
 				if(listaBookitos.isEmpty()) {
 					

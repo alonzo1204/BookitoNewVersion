@@ -9,7 +9,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>SB Admin - Start Bootstrap Template</title>
+<title>Bookito</title>
 <!-- Bootstrap core CSS-->
 <link rel="stylesheet"
 	th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" />
@@ -22,12 +22,11 @@
 <!-- Custom styles for this template-->
 <link rel="stylesheet" th:href="@{/css/sb-admin.css}" />
 </head>
-
 <header th:replace="layout/layout :: header"></header>
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
-	<!-- Navigation-->
 
-	<div class="content-wrapper">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
+<div class="content-wrapper" >
 		<div class="container-fluid">
 
 			<div class="container py-4">
@@ -35,31 +34,58 @@
 				<div class="card bg-light">
 					<div class="card-header bg-warning" th:text="${titulo}"></div>
 					<div class="card-body">
-
-						<img th:if="${#strings.length(empleado.foto) > 0}"
-							class="img-thumbnail rounded float-left" style="max-width: 17%;"
-							th:src="@{'/empleado/uploads/' + ${empleado.foto}}"
-							th:alt="${empleado.foto}" />
-
-						<ul class="list-group">
-							<li class="list-group-item" th:text="${empleado.area.nombreArea}"></li>
-							<li class="list-group-item active"
-								th:text="${empleado.nombreEmpleado}"></li>
-							<li class="list-group-item" th:text="${empleado.dniEmpleado}"></li>
-							<li class="list-group-item" th:text="${empleado.emailEmpleado}"></li>
-							<li class="list-group-item" th:text="${empleado.direccEmpleado}"></li>
-							<li class="list-group-item" th:text="${empleado.fecnacEmpleado}"></li>
-							<li class="list-group-item" th:text="${empleado.estadoEmpleado}"></li>
-						</ul>
-
-					</div>
-				</div>
+					
+				<a href="#" th:href="@{/bookito/ver/1}">
+		<img  style="width:180px; height:200px;" th:src="@{/images/calculo.jpg}" alt="Spring logo" /></a>
 
 			</div>
-
-
 		</div>
+		</div>
+	</div>
+</div>
 
+
+
+<!-- /.container-fluid-->
+		<!-- /.content-wrapper-->
+		<footer class="sticky-footer">
+			<div class="container">
+				<div class="text-center">
+					<small>BookitoApp</small>
+				</div>
+			</div>
+		</footer>
+		<!-- Scroll to Top Button-->
+		<a class="scroll-to-top rounded" href="#page-top"> <i
+			class="fa fa-angle-up"></i>
+		</a>
+		<!-- Logout Modal-->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Estas seguro
+							que deseas salir?</h5>
+						<button class="close" type="button" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">Le recordamos que toda modificación
+						está almacenado en nuestra base de datos.</div>
+					<div class="modal-footer">
+						<form id="logoutForm" th:action="@{/logout}" method="post">
+							<button class="btn btn-secondary" type="button"
+								data-dismiss="modal">Cancelar</button>
+							<button class="btn btn-primary"
+								onclick="document.getElementById('logoutForm').submit();"
+								type="submit">Salir</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 		
 		<!-- Bootstrap core JavaScript-->
 		<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
@@ -75,10 +101,6 @@
 		<!-- Custom scripts for this page-->
 		<script th:src="@{/js/sb-admin-datatables.min.js}"></script>
 		<script th:src="@{/js/sb-admin-charts.min.js}"></script>
-	</div>
+	
 </body>
-
-
 </html>
-
-

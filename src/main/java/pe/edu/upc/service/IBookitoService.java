@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import pe.edu.upc.entity.Bookito;
+import pe.edu.upc.entity.Categoria;
 
 
 public interface IBookitoService {
@@ -19,7 +20,13 @@ public List<Bookito> findAll();
 	public Bookito findOne(Long id);
 	
 	public void delete(Long id);
-	 
+	List<Bookito> listar();
+	
+	
+	
+	
+	Bookito listarId(Long id);
+	
 	//metodos de busqueda
 	List<Bookito> buscarTitulo(String titulo);
 	List<Bookito> buscarAutor(String autor);

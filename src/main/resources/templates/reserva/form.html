@@ -42,113 +42,72 @@
 			<div class="card-body">
 
 				
-				<form th:action="@{/empleo/form}" th:object="${empleo}"
+				<form th:action="@{/reserva/form}" th:object="${reserva}"
 					method="post" enctype="multipart/form-data">
-
-					<div class="form-group row">
-						<label for="nombreEmpleo" class="col-sm-2 col-form-label">Nombre: </label>
-						<div class="col-sm-6">
-							<input type="text" th:field="*{nombreEmpleo}" required="true"
-								class="form-control" th:errorclass="'form-control alert-danger'" />
-							<small class="form-text text-danger"
-								th:if="${#fields.hasErrors('nombreEmpleo')}"
-								th:errors="*{nombreEmpleo}"></small>
-						</div>
-					</div>
-					
-					<div class="form-group row">
-						<label for="area" class=" col-sm-2 col-form-label">Área: </label>
-						<div class="col-sm-6">
-
-							<select class="form-control" th:field="*{area.idArea}">
-								<option th:each="a: ${listaAREAS}" th:value="${a.idArea}"
-									th:text="${a.nombreArea}"
-									th:selected="(${a.idArea} == *{area.idArea})"></option>
-							</select>
-
-						</div>
-					</div>
 					
 					
 					<div class="form-group row">
-						<label for="ubicaEmpleo" class="col-sm-2 col-form-label">Ubicación: </label>
-						<div class="col-sm-6">
-							<input type="text" th:field="*{ubicaEmpleo}" required="true"
-								class="form-control" th:errorclass="'form-control alert-danger'" />
-							<small class="form-text text-danger"
-								th:if="${#fields.hasErrors('ubicaEmpleo')}"
-								th:errors="*{ubicaEmpleo}"></small>
-						</div>
-					</div>
-					
-					<div class="form-group row">
-						<label for="tipoempleo" class=" col-sm-2 col-form-label">Tipo de Empleo: </label>
-						<div class="col-sm-6">
-
-							<select class="form-control" th:field="*{tipoempleo.id}">
-								<option th:each="t: ${listaTIPOEMPLEOS}" th:value="${t.id}"
-									th:text="${t.nombreTipoEmpleo}"
-									th:selected="(${t.id} == *{tipoempleo.id})"></option>
-							</select>
-
-						</div>
-					</div>
-					
-					<div class="form-group row">
-						<label for="vacantesEmpleo" class="col-sm-2 col-form-label">Vacantes: </label>
-						<div class="col-sm-6">
-							<input type="number" th:field="*{vacantesEmpleo}" required="true"
-								class="form-control" th:errorclass="'form-control alert-danger'" />
-							<small class="form-text text-danger"
-								th:if="${#fields.hasErrors('vacantesEmpleo')}"
-								th:errors="*{vacantesEmpleo}"></small>
-						</div>
-					</div>
-					
-					<div class="form-group row">
-						<label for="validoHasta" class="col-sm-2 col-form-label ">Valido hasta:</label>
+						<label for="fechainicial" class="col-sm-2 col-form-label ">fecha inicial:</label>
 						<div class="col-sm-6">
 							<input type="date" class="form-control" required="true"
-								th:field="*{validoHasta}"
+								th:field="*{fechainicial}"
 								th:errorclass="'form-control alert-danger'" /> <small
 								class="form-text text-danger"
-								th:if="${#fields.hasErrors('validoHasta')}"
-								th:errors="*{validoHasta}"></small>
+								th:if="${#fields.hasErrors('fechainicial')}"
+								th:errors="*{fechainicial}"></small>
 						</div>
 					</div>
-
+					
+					
 					<div class="form-group row">
-						<label for="descripEmpleo" class="col-sm-2 col-form-label">Descripción:</label>
+						<label for="fechafinal" class="col-sm-2 col-form-label ">fecha final:</label>
 						<div class="col-sm-6">
-						
-							<textarea th:field="*{descripEmpleo}"
-								class="form-control" th:errorclass="'form-control alert-danger'" rows="3" required="true"></textarea> 
-								
-								<small class="form-text text-danger" 
-								th:if="${#fields.hasErrors('descripEmpleo')}"
-								th:errors="*{descripEmpleo}"></small>
+							<input type="date" class="form-control" required="true"
+								th:field="*{fechafinal}"
+								th:errorclass="'form-control alert-danger'" /> <small
+								class="form-text text-danger"
+								th:if="${#fields.hasErrors('fechafinal')}"
+								th:errors="*{fechafinal}"></small>
 						</div>
 					</div>
+					
+							<div class="form-group row">
+								<label for="area" class=" col-sm-2 col-form-label">Titulo:
+								</label>
+								<div class="col-sm-6">
 
-					<div class="form-group row">
-						<label for="beneficEmpleo" class="col-sm-2 col-form-label ">Beneficios:</label>
-						<div class="col-sm-6">
-						
-							<textarea th:field="*{beneficEmpleo}" required="true"
-								class="form-control" th:errorclass="'form-control alert-danger'" rows="3"> </textarea>
-								
-							<small class="form-text text-danger"
-								th:if="${#fields.hasErrors('beneficEmpleo')}"
-								th:errors="*{beneficEmpleo}"></small>
-						</div>
-					</div>
+									<select class="form-control" th:field="*{bookito.id}">
+										<option th:each="s: ${listaBOOKITOS}" th:value="${s.id}"
+											th:text="${s.titulo}"
+											th:selected="(${s.id} == *{bookito.id})"></option>
+									</select>
 
+								</div>
+							</div>
+							
+							<div class="form-group row">
+								<label for="area" class=" col-sm-2 col-form-label">Titulo:
+								</label>
+								<div class="col-sm-6">
 
-					<div class="form-group row">
-						<div class="col-sm-12 ">
-							<button type="submit" class="btn btn-secondary btn-block">Registrar Empleo</button>
-						</div>
-					</div>
+									<select class="form-control" th:field="*{usuario.id}">
+										<option th:each="s: ${listaUSUARIOS}" th:value="${s.id}"
+											th:text="${s.username}"
+											th:selected="(${s.id} == *{usuario.id})"></option>
+									</select>
+
+								</div>
+							</div>
+					
+					
+				
+					
+				
+				
+
+					
+
+				
 
 				</form>
 
@@ -213,6 +172,8 @@
 		<script th:src="@{/js/sb-admin-datatables.min.js}"></script>
 		<script th:src="@{/js/sb-admin-charts.min.js}"></script>
 	</div>
+
+
 </body>
 
 

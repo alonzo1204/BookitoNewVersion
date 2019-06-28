@@ -49,27 +49,20 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive" >
 			<ul class="navbar-nav navbar-sidenav"  id="exampleAccordion" style="background:#424949;padding-top: 15px;" >
 
-
-				<li class="nav-item" data-toggle="tooltip" data-placement="right" 
-					title="categorías"><a style="color: white"
-					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
-					href="#collapseComponents" data-parent="#exampleAccordion"> <i style="color: white"
-						class="fa fa-fw fa-file"></i> <span style="color: white" class="nav-link-text">Categorias</span>
-				</a>
-					<ul class="sidenav-second-level collapse" id="collapseComponents">
-
-						<li><a style="color: white" href="#" th:href="@{/empleo/form}"> <i style="color: white"
-								class="fa fa-pencil-square-o" aria-hidden="true"></i> Registrar
-						</a></li>
-						<li><a style="color: white" href="#" th:href="@{/empleo/listar}"><i style="color: white"
-								class="fa fa-list-ol" aria-hidden="true"></i> Listar</a></li>
-								<li><a style="color: white" href="#" th:href="@{/empleo/irBuscar}"> <i style="color: white"
-								class="fa fa-eye" aria-hidden="true"></i> Buscar
-						</a></li>
-
-
-
-					</ul></li>
+			<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Reglamento" ><a class="nav-link "    th:href="@{/recomendaciones}"
+				 > <i style="color: white" class="fa fa-fw fa-sitemap">
+					</i> <span style="color: white" class="nav-link-text">Recomendaciones</span>
+				</a></li>
+		
+			
+				<li class="nav-item" data-toggle="tooltip" data-placement="right"
+					title="Reglamento" ><a class="nav-link "    th:href="@{/principal}"
+				 > <i style="color: white" class="fa fa-fw fa-sitemap">
+					</i> <span style="color: white" class="nav-link-text">Categorias</span>
+				</a></li>
+		
+					
 
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
 					title="Reserva"><a style="color: white"
@@ -78,12 +71,12 @@
 						class="fa fa-archive"></i> <span style="color: white" class="nav-link-text">Reserva</span>
 				</a>
 					<ul class="sidenav-second-level collapse" id="collapseExamplePages">
-						<li><a style="color: white" href="#" th:href="@{/empleado/form}"> <i style="color: white"
+						<li><a style="color: white" href="#" th:href="@{/reserva/form}"> <i style="color: white"
 								class="fa fa-pencil-square-o" aria-hidden="true"></i> Registrar
 						</a></li>
-						<li><a style="color: white" href="#" th:href="@{/empleado/listar}"><i
+						<li><a style="color: white" href="#" th:href="@{/reserva/listar}"><i
 								class="fa fa-list-ol" aria-hidden="true"></i> Listar</a></li>
-								<li><a style="color: white" href="#" th:href="@{/empleado/irBuscar}"> <i style="color: white"
+								<li><a style="color: white" href="#" th:href="@{/reserva/irBuscar}"> <i style="color: white"
 								class="fa fa-eye" aria-hidden="true"></i> Buscar
 						</a></li>
 
@@ -112,12 +105,10 @@
 					
 
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
-					title="Menu Level"><a href="#" th:href="@{/reglamento}"
-					class="nav-link " > <i style="color: white"
-						class="fa fa-fw fa-sitemap"></i> <span class="nav-link-text" style="color: white">Reglamento Bookito</span>
-				</a>
-					</li>
-					
+					title="Reglamento" ><a class="nav-link "    th:href="@{/principal}"
+				 > <i style="color: white" class="fa fa-fw fa-sitemap">
+					</i> <span style="color: white" class="nav-link-text">Reglamento Bookito</span>
+				</a></li>
 					
 			
 				<li class="nav-item" data-toggle="tooltip" data-placement="right"
@@ -189,7 +180,8 @@
 
 
 				<li class="nav-item d-none d-sm-inline-block">
-               
+            
+			
                 <a  class="nav-link" th:href="@{/principal}">
                     <i class="fa fa-user-circle " style="font-size:30px;color:white;" aria-hidden="true" ></i>
                     <span class="menu-title" style="color:white;" >  </span>
@@ -207,7 +199,7 @@
 	</nav>
 
 
-		<div class="alert alert-success" th:if="${success != null}"
+		<div class="content-wrapper" th:if="${success != null}"
 			th:text="${success}"></div>
 		<div class="alert alert-danger" th:if="${error != null}"
 			th:text="${error}"></div>
@@ -215,18 +207,15 @@
 			th:text="${warning}"></div>
 		<div class="alert alert-info" th:if="${info != null}"
 			th:text="${info}"></div>
+			<div class="alert alert-success" th:if="${success2}"
+			th:text="${success2}"></div>
 	</header>
 	<div class="container"></div>
 
 
 	<footer th:fragment="footer" class="container">
 	
-		<hr />
-		<img th:src="@{/images/LOGO.png}" alt="Spring logo" />
-		<p>
-			Powered by <a href="https://projects.spring.io/spring-boot/">Spring
-				Boot</a> y <a href="http://www.thymeleaf.org">Thymeleaf</a>.
-		</p>
+		
 		
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Bootstrap JS -->
