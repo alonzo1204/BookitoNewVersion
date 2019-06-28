@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upc.dao.IUsuarioDao;
+import pe.edu.upc.entity.Bookito;
 import pe.edu.upc.entity.Categoria;
 import pe.edu.upc.entity.Usuario;
 
@@ -16,6 +17,13 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	
 	@Autowired
 	private IUsuarioDao usuarioDao;
+	@Override
+	@Transactional(readOnly=true)
+	public Usuario findOne(Long id) {
+		// TODO Auto-generated method stub
+		return usuarioDao.findOne(id);
+	}
+	
 	
 	@Override
 	@Transactional

@@ -18,7 +18,7 @@
 		id="mainNav"  >
 		
 		<hr />
-		<a href="#" th:href="@{/bookito/listar}">
+		<a href="#" th:href="@{/recuperacion}">
 		<img  style="width:68px; height:46px;" th:src="@{/images/LOGO.png}" alt="Spring logo" /></a>
 	
 		<button class="navbar-toggler navbar-toggler-right" type="button"
@@ -67,16 +67,16 @@
 					title="Reserva"><a style="color: white"
 					class="nav-link nav-link-collapse collapsed" data-toggle="collapse"
 					href="#collapseExamplePages" data-parent="#exampleAccordion"> <i style="color: white"
-						class="fa fa-archive"></i> <span style="color: white" class="nav-link-text">Reserva</span>
+						class="fa fa-archive"></i> <span style="color: white" class="nav-link-text">Reservas</span>
 				</a>
-					<ul class="sidenav-second-level collapse" id="collapseExamplePages">
-						<li><a style="color: white" href="#" th:href="@{/reserva/form}"> <i style="color: white"
-								class="fa fa-pencil-square-o" aria-hidden="true"></i> Registrar
+					<ul class="sidenav-second-level collapse" id="collapseExamplePages" >
+						<li sec:authorize="hasRole('ROLE_ADMIN')"><a style="color: white" href="#" th:href="@{/reserva/form}"> <i style="color: white"
+								class="fa fa-pencil-square-o" aria-hidden="true" ></i> Registrar
 						</a></li>
 						<li><a style="color: white" href="#" th:href="@{/reserva/listar}"><i
-								class="fa fa-list-ol" aria-hidden="true"></i> Listar</a></li>
+								class="fa fa-list-ol" aria-hidden="true"></i> Historial Reservas</a></li>
 								<li><a style="color: white" href="#" th:href="@{/reserva/irBuscar}"> <i style="color: white"
-								class="fa fa-eye" aria-hidden="true"></i> Buscar
+								class="fa fa-eye" aria-hidden="true"></i> Buscar Reserva
 						</a></li>
 
 					</ul></li>
@@ -91,14 +91,14 @@
 							Bookito</span>
 				</a>
 					<ul class="sidenav-second-level collapse" id="collapseMulti">
-						<li><a style="color: white" href="#" th:href="@{/bookito/form}"> <i style="color: white"
+						<li sec:authorize="hasRole('ROLE_ADMIN')"><a style="color: white" href="#" th:href="@{/bookito/form}"> <i style="color: white"
 								class="fa fa-pencil-square-o" aria-hidden="true"></i> Registrar
 						</a></li>
-						<li><a style="color: white" href="#" th:href="@{/bookito/listar}"> <i style="color: white"
+						<li sec:authorize="hasRole('ROLE_ADMIN')"><a style="color: white" href="#" th:href="@{/bookito/listar}"> <i style="color: white"
 								class="fa fa-list-ol" aria-hidden="true"></i> Listar
 						</a></li>
 						<li><a style="color: white" href="#" th:href="@{/bookito/irBuscar}"> <i style="color: white"
-								class="fa fa-eye" aria-hidden="true"></i> Buscar
+								class="fa fa-eye" aria-hidden="true"></i> Buscar libro
 						</a></li>
 					</ul></li>
 					
@@ -188,26 +188,11 @@
                
         
             </li>
-			
-
-			
-				
-				
+		
 			</ul>
 		</div>
 	</nav>
 
-
-		<div class="content-wrapper" th:if="${success != null}"
-			th:text="${success}"></div>
-		<div class="alert alert-danger" th:if="${error != null}"
-			th:text="${error}"></div>
-		<div class="alert alert-warning" th:if="${warning != null}"
-			th:text="${warning}"></div>
-		<div class="alert alert-info" th:if="${info != null}"
-			th:text="${info}"></div>
-			<div class="alert alert-success" th:if="${success2}"
-			th:text="${success2}"></div>
 	</header>
 	<div class="container"></div>
 

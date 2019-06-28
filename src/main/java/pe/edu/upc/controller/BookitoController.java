@@ -78,6 +78,7 @@ public class BookitoController {
 		public String ver(@PathVariable(value = "id") Long id, Map<String, Object> model, RedirectAttributes flash) {
 
 			// Obtenemos el Bookito por el ID
+			
 			Bookito bookito = bookitoService.findOne(id);
 
 			// Validamos el bookito

@@ -11,13 +11,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
+import pe.edu.upc.entity.Bookito;
 import pe.edu.upc.entity.Usuario;
 
 import pe.edu.upc.service.IUsuarioService;
@@ -75,6 +76,22 @@ public class UsuarioController {
 				return "redirect:/login";
 			}
 
+			// METODO PARA EDITAR Bookito
+			//@Secured("ROLE_ADMIN")
+			@RequestMapping(value = "/recuperacion/{id}")
+			public String editar(@PathVariable(value = "id") Long id, Map<String, Object> model, RedirectAttributes flash) {
+
+				Usuario usuario = null;
+
+				if (id > 0) {
+					usuario = usuarioService.findOne(id);
+					
+				
+				} 
+				model.put("usuario", usuario);
+				model.put("titulo", "Editar Usuario");
+				return "recuperacion";
+			}
 			
 			
 			
