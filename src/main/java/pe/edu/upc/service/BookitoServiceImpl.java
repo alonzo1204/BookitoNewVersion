@@ -59,7 +59,7 @@ public class BookitoServiceImpl implements IBookitoService {
 	
 	@Override
 	public List<Bookito> buscarAutor(String autor) {
-		return bookitoDAO.buscarTitulo(autor);
+		return bookitoDAO.buscarAutor(autor);
 	}
 	
 	@Override

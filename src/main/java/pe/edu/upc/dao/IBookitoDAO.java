@@ -21,14 +21,14 @@ public interface IBookitoDAO extends PagingAndSortingRepository<Bookito,Long>{
 	
 	
 	@Query("select e from Bookito e where lower(e.isbn) like lower(concat('%',?1,'%'))")
-	List<Bookito> buscarIsbn(@Param("isbn") String isbn);
+	List<Bookito> buscarIsbn(String isbn);
 	
 	@Query("select e from Bookito e where lower(e.categoria.nombreCategoria) like lower(concat('%',?1,'%'))")
-	List<Bookito> buscarCategoria(@Param("nombreCategoria") String nombreCategoria);
+	List<Bookito> buscarCategoria( String nombreCategoria);
 	
 	
 	@Query("select e from Bookito e where lower(e.sede.nombreSede) like lower(concat('%',?1,'%'))")
-	List<Bookito> buscarSede(@Param("nombreSede") String nombreSede);
+	List<Bookito> buscarSede( String nombreSede);
 	
 
 	

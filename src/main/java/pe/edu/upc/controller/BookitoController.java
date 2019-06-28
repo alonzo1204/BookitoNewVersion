@@ -236,7 +236,7 @@ public class BookitoController {
 			
 			
 			bookito.setTitulo(bookito.getTitulo());
-			listaBookitos= bookitoService.buscarAutor(bookito.getTitulo());
+			listaBookitos= bookitoService.buscarTitulo(bookito.getTitulo());
 			
 			
 			
