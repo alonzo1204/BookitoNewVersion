@@ -38,13 +38,31 @@
 					<div class="card-body">
 					
 						<ul class="list-group">
-							<li class="list-group-item"		   th:text="${reserva.bookito.titulo}"></li>		
-							<li class="list-group-item active" th:text="${reserva.fechainicial}"></li>
-							<li class="list-group-item" 	   th:text="${reserva.fechafinal}"></li>
-							<li class="list-group-item"		   th:text="${reserva.bookito.sede.nombreSede}"></li>
-							<li class="list-group-item"		   th:text="${reserva.bookito.categoria.nombreCategoria}"></li>
-							<li class="list-group-item"		    th:text="PENDIENTE"></li>
-							
+						
+						<div class="input-group-prepend">
+							<li class="list-group-item " style="width:200px;">Título</li>
+							<li class="list-group-item"	style="width:100%"   th:text="${reserva.bookito.titulo}"></li>
+						</div>
+						<div class="input-group-prepend">	
+							<li class="list-group-item " style="width:200px;">Fecha reservado</li>	
+							<li class="list-group-item active" style="width:100%" th:text="${reserva.fechainicial}"></li>
+							</div>
+						<div class="input-group-prepend">
+							<li class="list-group-item " style="width:200px;">Fecha de devolución</li>
+							<li class="list-group-item" style="width:100%"   th:text="${reserva.fechafinal}"></li>
+							</div>
+						<div class="input-group-prepend">
+							<li class="list-group-item " style="width:200px;">Sede</li>
+							<li class="list-group-item" style="width:100%"  th:text="${reserva.bookito.sede.nombreSede}"></li>
+							</div>
+						<div class="input-group-prepend">
+							<li class="list-group-item " style="width:200px;">Categoría</li>
+							<li class="list-group-item"	style="width:100%"   th:text="${reserva.bookito.categoria.nombreCategoria}"></li>
+							</div>
+						<div class="input-group-prepend">
+							<li class="list-group-item " style="width:200px;">Estado de reserva</li>
+							<li class="list-group-item"	style="width:100%"  th:text="PENDIENTE"></li>
+						</div>
 					
 						</ul>
 								
