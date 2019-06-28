@@ -26,7 +26,7 @@ public class LoginController {
 		
 		
 		if (principal != null) {
-			flash.addFlashAttribute("info", "                Ya ha inciado sesión anteriormente");
+			flash.addFlashAttribute("info", " Ya ha inciado sesión anteriormente");
 			return "redirect:/bookito/listar";
 		}
 
