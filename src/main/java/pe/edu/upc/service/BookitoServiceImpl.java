@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upc.dao.IBookitoDAO;
 import pe.edu.upc.entity.Bookito;
+import pe.edu.upc.entity.Categoria;
+
 
 
 
@@ -74,7 +76,14 @@ public class BookitoServiceImpl implements IBookitoService {
 		return bookitoDAO.buscarCategoria(categoria);
 	}
 	
+	@Override
+	public List<Bookito> listar() {
+		return (List<Bookito>) bookitoDAO.findAll();
+	}
 	
-	
+	@Override
+	public Bookito listarId(Long id) {
+		return bookitoDAO.findOne(id);
+	}
 	
 }

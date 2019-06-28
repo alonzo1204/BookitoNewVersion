@@ -12,6 +12,9 @@ public interface ICategoriaService {
 	
 	void eliminar(Long idCategoria);
 	
+	
+	
+	
 	Categoria listarId(Long idCategoria);
 	
 	List<Categoria> listar();

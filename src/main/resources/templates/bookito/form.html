@@ -45,11 +45,12 @@
 							method="post" enctype="multipart/form-data">
 
 							<div class="form-group row">
-								<label for="nombreEmpleado" class="col-sm-2 col-form-label">Titulo del Libro:</label>
+								<label for="tituloBookito" class="col-sm-2 col-form-label">Titulo del Libro:</label>
 								<div class="col-sm-6">
 									<input type="text" th:field="*{titulo}" required="true"
 										class="form-control"
-										th:errorclass="'form-control alert-danger'" /> <small
+										th:errorclass="'form-control alert-danger'" /> 
+										<small
 										class="form-text text-danger"
 										th:if="${#fields.hasErrors('titulo')}"
 										th:errors="*{titulo}"></small>
